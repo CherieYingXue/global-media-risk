@@ -1,26 +1,62 @@
 {
-  "generated_at": "2026-05-24T18:11:31.903266+08:00",
-  "generated_at_display": "2026年05月24日 18:11",
+  "generated_at": "2026-05-24T19:00:00.007467+08:00",
+  "generated_at_display": "2026年05月24日 19:00",
   "period": "过去24小时",
   "timezone": "Asia/Shanghai",
   "media_scanned": 80,
-  "articles_collected": 483,
+  "articles_collected": 474,
   "summary": {
-    "total_items": 2,
-    "high_risk_count": 0,
+    "total_items": 3,
+    "high_risk_count": 1,
     "medium_risk_count": 2,
     "by_category": {
       "摩擦冲突": 1,
-      "负面评价": 0,
-      "不利措施": 1,
+      "负面评价": 1,
+      "不利措施": 2,
       "地缘风险": 0
     },
     "by_country": {
+      "印度": 1,
       "中国香港": 1,
       "中国台湾": 1
     }
   },
   "items": [
+    {
+      "title": "How US govt’s chip shortage problem may be ‘good news' for Anthropic",
+      "summary": "Facing a severe computer chip shortage, US intelligence agencies are increasing their reliance on AI firm Anthropic, despite its blacklisting as a national security threat. A $9 billion emergency fund aims to secure advanced semiconductors for AI models on classified networks, crucial for sifting through vast data and countering foreign adversaries like China.",
+      "url": "https://timesofindia.indiatimes.com/technology/tech-news/how-us-governments-chip-shortage-problem-may-be-good-news-for-anthropic-which-it-has-designated-national-security-threat/articleshow/131285478.cms",
+      "published": "2026-05-24T02:24:00+00:00",
+      "media": "印度时报",
+      "media_url": "https://timesofindia.indiatimes.com",
+      "country": "印度",
+      "language": "英语",
+      "source_feed": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+      "risk_categories": [
+        "negative",
+        "measure"
+      ],
+      "risk_labels": [
+        "负面评价",
+        "不利措施"
+      ],
+      "china_keywords": [
+        "china"
+      ],
+      "matched_keywords": {
+        "negative": [
+          "threat"
+        ],
+        "measure": [
+          "blacklist"
+        ]
+      },
+      "risk_score": 11,
+      "severity": "高",
+      "analysis_summary": "印度媒体《印度时报》报道指出，相关动向可能对中国构成【负面评价、不利措施】类风险，值得关注。",
+      "title_zh": "美国政府的芯片短缺问题对 Anthropic 来说可能是“好消息”",
+      "is_foreign_title": true
+    },
     {
       "title": "Will Zimbabwe’s lithium strategy help it break into the value-adding game?",
       "summary": "Zimbabwe is betting that its move into lithium processing will finally break the cycle of digging and shipping ore that has defined its mining sector for decades.\nThis follows the export of the continent’s first consignment of lithium sulphate by Prospect Lithium Zimbabwe, a subsidiary of China’s Zhejiang Huayou Cobalt, from its US$400 million Arcadia mine near Harare last month.\nThe milestone came after Harare unexpectedly brought forward its ban on raw mineral exports to February this year to.",

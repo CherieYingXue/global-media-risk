@@ -49,7 +49,7 @@ def _read_url_file() -> str | None:
     if not URL_FILE.exists():
         return None
     text = URL_FILE.read_text(encoding="utf-8").strip()
-    m = re.search(r"https://[\w-]+\.(?:lhr\.life|serveousercontent\.com)", text)
+    m = re.search(r"https://[\w-]+\.(?:trycloudflare\.com|lhr\.life|serveousercontent\.com)", text)
     return m.group(0) if m else (text if text.startswith("http") else None)
 
 

@@ -13,7 +13,10 @@ risk_insight/tunnel_manager.lock
 risk_insight/deploy_url.txt
 risk_insight/tunnel_status.json
 risk_insight/cloudflared.exe
+risk_insight/cloudflared.exe.bak
 risk_insight/*.exe
+risk_insight/cloudflared_manager.lock
+risk_insight/*.lock
 
 # 本地报告可提交也可忽略；云端会重新生成
 # risk_insight/data/reports/
