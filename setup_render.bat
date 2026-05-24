@@ -1,25 +1,24 @@
 @echo off
 chcp 65001 >nul
-cd /d "%~dp0.."
+cd /d "%~dp0"
+
 echo.
 echo ============================================
-echo   部署到 Render（需 GitHub 账号，一次性）
+echo   代码已推送到 GitHub，请在 Render 完成部署
 echo ============================================
 echo.
-echo 1. 在浏览器打开 GitHub 创建仓库:
-start https://github.com/new?name=global-media-risk
-echo    仓库名: global-media-risk （保持空仓库，不要勾选 README）
+echo 仓库: https://github.com/CherieYingXue/global-media-risk
 echo.
-echo 2. 创建后在本窗口执行（把 YOUR_NAME 换成你的 GitHub 用户名）:
+echo 正在打开 Render 一键部署页面...
+start "https://render.com/deploy?repo=https://github.com/CherieYingXue/global-media-risk"
 echo.
-echo    git remote add origin https://github.com/YOUR_NAME/global-media-risk.git
-echo    git push -u origin main
+echo 请按以下步骤操作:
+echo   1. 点击 New Blueprint Instance
+echo   2. 连接 GitHub 账号（若未连接）
+echo   3. 选择仓库 CherieYingXue / global-media-risk
+echo   4. 点击 Apply 并等待 5-10 分钟
 echo.
-echo 3. 推送完成后，在 Render 一键部署:
-start https://dashboard.render.com/blueprints
-echo    选择 New Blueprint Instance ^> 连接仓库 ^> Apply
-echo.
-echo 部署完成后会得到固定链接，例如:
-echo    https://global-media-risk.onrender.com
+echo 部署完成后手机访问:
+echo   https://global-media-risk.onrender.com
 echo.
 pause
