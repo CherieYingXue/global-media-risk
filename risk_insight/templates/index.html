@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0f172a">
+  <title>全球媒体风险洞察</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1>全球媒体风险洞察</h1>
+      <p class="subtitle">分析主流媒体过去24小时对中国构成风险的报道</p>
+    </div>
+    {% if report %}
+    <div class="meta-bar">
+      <span>{{ report.generated_at_display }}</span>
+      <span>扫描 {{ report.media_scanned }} 家媒体</span>
+      <span>{{ report.summary.total_items }} 条风险信号</span>
+    </div>
+    {% endif %}
+  </header>
+
+  <main class="container">
+    {% if not report %}
+    <section class="empty">
+      <p>暂无报告数据</p>
+      <button id="btnGenerate" class="btn-primary">立即生成首份报告</button>
+      <p class="hint">系统将于每日 06:00（北京时间）自动更新</p>
+    </section>
+    {% else %}
+    <section class="stats-grid">
+      <div class="stat-card high">
+        <div class="stat-num">{{ report.summary.high_risk_count }}</div>
+        <div class="stat-label">高风险</div>
+      </div>
+      <div class="stat-card medium">
+        <div class="stat-num">{{ report.summary.medium_risk_count }}</div>
+        <div class="stat-label">中风险</div>
+      </div>
+      <div class="stat-card total">
+        <div class="stat-num">{{ report.articles_collected }}</div>
+        <div class="stat-label">采集报道</div>
+      </div>
+    </section>
+
+    <section class="filter-bar">
+      <button class="filter-btn active" data-filter="all">全部</button>
+      <button class="filter-btn" data-filter="摩擦冲突">摩擦冲突</button>
+      <button class="filter-btn" data-filter="负面评价">负面评价</button>
+      <button class="filter-btn" data-filter="不利措施">不利措施</button>
+      <button class="filter-btn" data-filter="地缘风险">地缘风险</button>
+    </section>
+
+    <section class="items-list">
+      {% for item in report['items'] %}
+      <article class="risk-card severity-{{ item.severity }}" data-labels="{{ item.risk_labels | join(',') }}">
+        <div class="card-top">
+          <span class="severity-badge">{{ item.severity }}风险</span>
+          <span class="country-tag">{{ item.country }}</span>
+        </div>
+        <h2 class="card-title">
+          <a href="{{ item.url }}" target="_blank" rel="noopener" class="title-link">
+            {% if item.get('is_foreign_title') %}
+            <span class="title-foreign">{{ item.title }}</span>
+            <span class="title-zh">{{ item.title_zh }}</span>
+            {% else %}
+            <span class="title-main">{{ item.title }}</span>
+            {% if item.title_zh and item.title_zh != item.title %}
+            <span class="title-zh">{{ item.title_zh }}</span>
+            {% endif %}
+            {% endif %}
+          </a>
+        </h2>
+        <p class="card-summary">{{ item.analysis_summary }}</p>
+        {% if item.summary %}
+        <p class="card-excerpt">{{ item.summary[:180] }}{% if item.summary|length > 180 %}…{% endif %}</p>
+        {% endif %}
+        <div class="card-tags">
+          {% for label in item.risk_labels %}
+          <span class="tag">{{ label }}</span>
+          {% endfor %}
+        </div>
+        <div class="card-footer">
+          <div class="media-info">
+            <strong>{{ item.media }}</strong>
+            <span>{{ item.country }} · {{ item.language }}</span>
+          </div>
+          <a href="{{ item.url }}" target="_blank" rel="noopener" class="link-btn">阅读原文</a>
+        </div>
+      </article>
+      {% else %}
+      <p class="empty-msg">近24小时未发现对中国构成明显风险的报道</p>
+      {% endfor %}
+    </section>
+    {% endif %}
+  </main>
+
+  <footer class="footer">
+    <button id="btnRefresh" class="btn-secondary">手动刷新报告</button>
+    <div class="access-box" id="accessBox">
+      {% if access and access.public_url %}
+      <p class="access-label">📱 手机访问链接{% if access.deploy_mode == 'cloud' %}（Render 云端）{% else %}（公网）{% endif %}</p>
+      <a class="access-link" href="{{ access.public_url }}">{{ access.public_url }}</a>
+      {% if access.deploy_mode != 'cloud' and not access.tunnel_alive %}
+      <p class="access-hint">隧道重连中，若无法打开请稍候或运行 deploy.bat</p>
+      {% endif %}
+      {% else %}
+      <p class="access-label">📱 同一 WiFi 访问</p>
+      <a class="access-link" href="{{ access.lan_url }}">{{ access.lan_url }}</a>
+      {% endif %}
+    </div>
+    <p>每小时自动更新 · 每日 06:00 深度刷新{% if access.deploy_mode != 'cloud' %} · 链接失效请运行 deploy.bat{% endif %}</p>
+  </footer>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="/static/app.js?v=3"></script>
+</body>
+</html>

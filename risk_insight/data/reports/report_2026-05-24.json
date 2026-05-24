@@ -1,0 +1,85 @@
+{
+  "generated_at": "2026-05-24T18:11:31.903266+08:00",
+  "generated_at_display": "2026年05月24日 18:11",
+  "period": "过去24小时",
+  "timezone": "Asia/Shanghai",
+  "media_scanned": 80,
+  "articles_collected": 483,
+  "summary": {
+    "total_items": 2,
+    "high_risk_count": 0,
+    "medium_risk_count": 2,
+    "by_category": {
+      "摩擦冲突": 1,
+      "负面评价": 0,
+      "不利措施": 1,
+      "地缘风险": 0
+    },
+    "by_country": {
+      "中国香港": 1,
+      "中国台湾": 1
+    }
+  },
+  "items": [
+    {
+      "title": "Will Zimbabwe’s lithium strategy help it break into the value-adding game?",
+      "summary": "Zimbabwe is betting that its move into lithium processing will finally break the cycle of digging and shipping ore that has defined its mining sector for decades.\nThis follows the export of the continent’s first consignment of lithium sulphate by Prospect Lithium Zimbabwe, a subsidiary of China’s Zhejiang Huayou Cobalt, from its US$400 million Arcadia mine near Harare last month.\nThe milestone came after Harare unexpectedly brought forward its ban on raw mineral exports to February this year to.",
+      "url": "https://www.scmp.com/news/china/diplomacy/article/3354484/will-zimbabwes-lithium-strategy-help-it-break-value-adding-game?utm_source=rss_feed",
+      "published": "2026-05-24T07:00:07+00:00",
+      "media": "南华早报",
+      "media_url": "https://www.scmp.com",
+      "country": "中国香港",
+      "language": "英语",
+      "source_feed": "https://www.scmp.com/rss/91/feed",
+      "risk_categories": [
+        "measure"
+      ],
+      "risk_labels": [
+        "不利措施"
+      ],
+      "china_keywords": [
+        "china"
+      ],
+      "matched_keywords": {
+        "measure": [
+          "ban"
+        ]
+      },
+      "risk_score": 7,
+      "severity": "中",
+      "analysis_summary": "中国香港媒体《南华早报》报道指出，相关动向可能对中国构成【不利措施】类风险，值得关注。",
+      "title_zh": "津巴布韦的锂战略能否帮助其打入增值游戏？",
+      "is_foreign_title": true
+    },
+    {
+      "title": "Taiwan security chief warns China escalating maritime pressure in First Island Chain - Taiwan News",
+      "summary": "Taiwan security chief warns China escalating maritime pressure in First Island Chain&nbsp;&nbsp;Taiwan News",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5kVHRmVHp4NWcxX1dSbWNHNUtjTEdLU2JDcXBhQ3lPQ3I5T1AtZFlGYVJ5emhSWm4zVVdaUzhEQU9ZemZPY01FVGNULWFwUTBTMkZPbGR1MGk?oc=5",
+      "published": "2026-05-24T06:08:00+00:00",
+      "media": "Taiwan News",
+      "media_url": "https://www.taiwannews.com.tw",
+      "country": "中国台湾",
+      "language": "英语",
+      "source_feed": "https://news.google.com/rss/search?q=site%3Ataiwannews.com.tw+%28China+OR+Chinese+OR+Beijing+OR+%E4%B8%AD%E5%9B%BD+OR+%E5%88%B6%E8%A3%81+OR+conflict%29+when%3A1d&hl=en-US&gl=US&ceid=US:en",
+      "risk_categories": [
+        "friction"
+      ],
+      "risk_labels": [
+        "摩擦冲突"
+      ],
+      "china_keywords": [
+        "china"
+      ],
+      "matched_keywords": {
+        "friction": [
+          "escalat"
+        ]
+      },
+      "risk_score": 6,
+      "severity": "中",
+      "analysis_summary": "中国台湾媒体《Taiwan News》报道指出，相关动向可能对中国构成【摩擦冲突】类风险，值得关注。",
+      "title_zh": "台湾安全局长警告中国在第一岛链升级海上压力 - 台湾新闻",
+      "is_foreign_title": true
+    }
+  ]
+}

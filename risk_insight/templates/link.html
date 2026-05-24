@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>访问链接 - 全球媒体风险洞察</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="container" style="padding-top:40px">
+    <h1 style="font-size:1.2rem;margin-bottom:16px">全球媒体风险洞察 · 访问链接</h1>
+    {% if access.tunnel_alive and access.public_url %}
+    <section class="access-card ok">
+      <p>公网链接（手机任意网络可用）</p>
+      <a class="access-link big" href="{{ access.public_url }}">{{ access.public_url }}</a>
+    </section>
+    {% else %}
+    <section class="access-card warn">
+      <p>公网隧道已断开，请使用局域网链接（需同一 WiFi）</p>
+    </section>
+    {% endif %}
+    <section class="access-card">
+      <p>局域网链接</p>
+      <a class="access-link big" href="{{ access.lan_url }}">{{ access.lan_url }}</a>
+    </section>
+    <p class="hint">在电脑上双击 deploy.bat 可重建公网隧道</p>
+    <a href="/" class="link-btn" style="display:inline-block;margin-top:20px">进入报告首页</a>
+  </main>
+</body>
+</html>

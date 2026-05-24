@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+.env
+.venv/
+venv/
+*.egg-info/
+
+# 本地隧道/临时文件（勿提交）
+risk_insight/tunnel.log
+risk_insight/tunnel_manager.lock
+risk_insight/deploy_url.txt
+risk_insight/tunnel_status.json
+risk_insight/cloudflared.exe
+risk_insight/*.exe
+
+# 本地报告可提交也可忽略；云端会重新生成
+# risk_insight/data/reports/

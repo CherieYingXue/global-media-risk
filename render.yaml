@@ -1,0 +1,25 @@
+# Render 一键部署：https://render.com
+# Dashboard → Blueprints → 连接 GitHub 仓库 → Apply
+
+services:
+  - type: web
+    name: global-media-risk
+    runtime: python
+    rootDir: risk_insight
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: RENDER
+        value: "true"
+      - key: ENABLE_TUNNEL
+        value: "false"
+      - key: TZ
+        value: Asia/Shanghai
+      - key: MAX_MEDIA_PER_RUN
+        value: "80"
+      - key: FETCH_CONCURRENCY
+        value: "6"
